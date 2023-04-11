@@ -646,7 +646,7 @@
      transform: perspective(1px) translateZ(0);
      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
      position: relative;
-     background: #b0b435;
+     background: #45ada8;
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -1606,7 +1606,7 @@
      width: 100%;
      height: 0;
      border-radius: 0px;
-     background: #b0b435;
+     background: #45ada8;
      position: absolute;
      top: 0;
      left: 0;
@@ -2042,7 +2042,7 @@
      padding: 70px 0px;
 }
  .table-main table thead{
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
 }
  .table-main .table thead th{
