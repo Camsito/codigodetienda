@@ -2378,12 +2378,14 @@
 }
  .contact-info-left{
      padding: 20px;
-     background: url(../images/contact-bg.jpg) no-repeat center;
-	 background-size: cover;
+     background: url(../images/contact-bg.jpg) no-repeat  ;
+	 background-size: auto 47%;
+     background-position: bottom right;
+     
 }
  .contact-info-left h2{
      font-size: 22px;
-     font-weight: 700;
+     font-weight: 1000;
 }
  .contact-info-left p{
      margin-bottom: 15px;
