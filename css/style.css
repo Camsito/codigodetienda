@@ -151,7 +151,7 @@
      height: 32px;
      text-align: center;
      line-height: 5px;
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
      cursor: pointer;
      border: 0;
@@ -515,16 +515,16 @@
      padding-right: 30px;
 }
  nav.navbar.bootsnav ul.nav li.active > a{
-     color: #b0b435;
+     color: #45ada8;
 }
  nav.navbar.bootsnav ul.nav li.active > a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  nav.navbar.bootsnav ul.nav li > a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  @media (min-width: 1024px) {
      nav.navbar.navbar-inverse ul.nav .dropdown-menu{
@@ -626,7 +626,7 @@
      font-weight: 700;
 }
  .cart-list h6 a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  ul.cart-list p .price{
      font-weight: normal;
@@ -742,7 +742,7 @@
      height: 100vh;
 }
  .slides-navigation a {
-     background: #b0b435;
+     background: #45ada8;
      position: absolute;
      height: 70px;
      width: 70px;
@@ -798,8 +798,8 @@
 	 border-radius: 6px;
 }
  .slides-pagination a.current{
-     background: #b0b435;
-     border: 2px solid #b0b435;
+     background: #45ada8;
+     border: 2px solid #45ada8;
 }
  .cover-slides p a{
      font-size: 24px;
@@ -987,7 +987,7 @@
      display: block;
 }
  .mask-icon a.cart{
-     background: #b0b435;
+     background: #45ada8;
      position: absolute;
      bottom: 0;
      left: 0px;
@@ -1229,7 +1229,7 @@
      transition: all 0.3s ease;
 }
  .main-instagram.owl-carousel .owl-nav button.owl-next:hover, .main-instagram.owl-carousel .owl-nav button.owl-prev:hover{
-     background: #b0b435;
+     background: #45ada8;
 }
  .ins-inner-box{
      position: relative;
@@ -2090,7 +2090,7 @@
      padding: 0px 20px;
 }
  .coupon-box .input-group .input-group-append .btn-theme:hover {
-     background: #b0b435;
+     background: #45ada8;
 }
  .update-box input[type="submit"]{
      background: #000000;
@@ -2116,7 +2116,7 @@
      width: inherit;
 }
  .update-box input[type="submit"]:hover{
-     background: #b0b435;
+     background: #45ada8;
 }
  .order-box h3{
      font-size: 16px;
@@ -2133,7 +2133,7 @@
 }
  .gr-total h5 {
      font-weight: 700;
-     color: #b0b435;
+     color: #45ada8;
      font-size: 18px;
      margin: 0px;
      padding: 0px;
@@ -2174,7 +2174,7 @@
      font-size: 14px;
 }
  .needs-validation .form-control:focus {
-     border: 1px solid #b0b435 !important;
+     border: 1px solid #45ada8 !important;
 }
  .review-form-box .form-control{
      min-height: 40px;
@@ -2184,11 +2184,11 @@
      font-size: 14px;
 }
  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-     background-color: #b0b435;
+     background-color: #45ada8;
      box-shadow: none;
 }
  .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
-     background-color: #b0b435;
+     background-color: #45ada8;
      box-shadow: none;
 }
  .new-account-login h5 {
@@ -2243,7 +2243,7 @@
      color: #000000;
 }
  .my-account-page a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  .service-icon i{
      font-size: 34px;
@@ -2325,10 +2325,10 @@
     }
      40% {
          opacity: 0.5;
-         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #b0b435, 0 0 0 10px rgba(0, 53, 68, 0.5);
+         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #45ada8, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
      100% {
-         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #b0b435, 0 0 0 10px rgba(0, 53, 68, 0.5);
+         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #45ada8, 0 0 0 10px rgba(0, 53, 68, 0.5);
          -webkit-transform: scale(1.5);
          opacity: 0;
     }
@@ -2339,10 +2339,10 @@
     }
      40% {
          opacity: 0.5;
-         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #b0b435, 0 0 0 10px rgba(0, 53, 68, 0.5);
+         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #45ada8, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
      100% {
-         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #b0b435, 0 0 0 10px rgba(0, 53, 68, 0.5);
+         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #45ada8, 0 0 0 10px rgba(0, 53, 68, 0.5);
          -moz-transform: scale(1.5);
          opacity: 0;
     }
@@ -2353,7 +2353,7 @@
     }
      40% {
          opacity: 0.5;
-         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #b0b435, 0 0 0 10px rgba(0, 53, 68, 0.5);
+         box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #45ada8, 0 0 0 10px rgba(0, 53, 68, 0.5);
     }
      100% {
          box-shadow: 0 0 0 2px rgba(0, 53, 68, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(0, 53, 68, 0.5);
@@ -2405,10 +2405,10 @@
      left: 0;
      top: 5px;
      padding-right: 6px;
-     color: #b0b435;
+     color: #45ada8;
 }
  .contact-info-left ul li p a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  .contact-form-right{
      padding: 20px;
@@ -2432,7 +2432,7 @@
      position: relative;
 }
  .contact-form-right .form-group .form-control:focus{
-     border: 1px solid #b0b435;
+     border: 1px solid #45ada8;
      box-shadow: none;
 }
  .submit-button button{
@@ -2492,7 +2492,7 @@
      font-size: 24px;
 }
  .single-product-details h5 {
-     color: #b0b435;
+     color: #45ada8;
      font-weight: 700;
      font-size: 18px;
 }
@@ -2504,7 +2504,7 @@
      font-size: 15px;
 }
  .available-stock span a {
-     color: #b0b435;
+     color: #45ada8;
 }
  .single-product-details h4{
      font-size: 18px;
@@ -2559,7 +2559,7 @@
  .share-bar{
 }
  .share-bar a {
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
      padding: 5px 10px;
      display: inline-block;
@@ -2593,7 +2593,7 @@
      text-align: center;
 }
  .featured-products-box .owl-nav button.owl-prev:hover, .featured-products-box .owl-nav button.owl-next:hover{
-     background: #b0b435;
+     background: #45ada8;
 }
  .table-responsive .table td, .table-responsive .table th {
      vertical-align: middle;
