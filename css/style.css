@@ -318,7 +318,7 @@
      color: #b0b435;
 }
  .attr-nav > ul > li > a:hover{
-     color: #b0b435;
+     color: #45ada8;
 }
  nav.navbar.bootsnav ul.nav > li > a{
      margin: 0px;
@@ -900,7 +900,7 @@
      display: inline-block;
 }
  .filter-button-group button{
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
      border: none;
      cursor: pointer;
@@ -1141,7 +1141,7 @@
      line-height: 34px;
 }
  .option-blog li a:hover{
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
 }
  .tooltip-inner {
@@ -1709,14 +1709,14 @@
 }
  .our-team .social li a:hover{
      width: 35px;
-     background: #b0b435;
+     background: #45ada8;
      transition-delay: 0s;
 }
  .our-team .icon{
      width: 35px;
      height: 35px;
      line-height: 35px;
-     background: #b0b435;
+     background: #45ada8;
      text-align: center;
      color: #fff;
      position: absolute;
@@ -2559,7 +2559,7 @@
  .share-bar{
 }
  .share-bar a {
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
      padding: 5px 10px;
      display: inline-block;
@@ -2593,7 +2593,7 @@
      text-align: center;
 }
  .featured-products-box .owl-nav button.owl-prev:hover, .featured-products-box .owl-nav button.owl-next:hover{
-     background: #b0b435;
+     background: #45ada8;
 }
  .table-responsive .table td, .table-responsive .table th {
      vertical-align: middle;
