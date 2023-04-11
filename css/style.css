@@ -646,7 +646,7 @@
      transform: perspective(1px) translateZ(0);
      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
      position: relative;
-     background: #b0b435;
+     background: #45ada8;
      -webkit-transition-property: color;
      transition-property: color;
      -webkit-transition-duration: 0.3s;
@@ -1284,7 +1284,7 @@
 	font-size: 20px;
 }
 .footer-top-box h3::before {
-    border-bottom: 2px solid #b0b435;
+    border-bottom: 2px solid #45ada8;
     content: "";
     height: 3px;
     width: 50%;
@@ -1366,7 +1366,7 @@
      font-weight: 700;
 }
  .footer-widget h4::before {
-     border-bottom: 3px solid #b0b435;
+     border-bottom: 3px solid #45ada8;
      content: "";
      height: 3px;
      width: 100%;
@@ -1393,7 +1393,7 @@
      font-weight: 700;
 }
  .footer-link h4::before {
-     border-bottom: 3px solid #b0b435;
+     border-bottom: 3px solid #45ada8;
      content: "";
      height: 3px;
      width: 100%;
@@ -1448,7 +1448,7 @@
      font-weight: 700;
 }
  .footer-link-contact h4::before {
-     border-bottom: 3px solid #b0b435;
+     border-bottom: 3px solid #45ada8;
      content: "";
      height: 3px;
      width: 100%;
@@ -1529,13 +1529,17 @@
      color: #ffffff;
 	 float: left;
      padding: 10px 0px;
+     
+     
 }
  .all-title-box .breadcrumb{
-     background: #b0b435;
+     border: solid black;
+     background: #45ada8;
      margin: 0px;
      display: inline-block;
      border-radius: 0px;
 	 float: right;
+     
 }
  .all-title-box .breadcrumb li{
      display: inline-block;
@@ -1602,7 +1606,7 @@
      width: 100%;
      height: 0;
      border-radius: 0px;
-     background: #b0b435;
+     background: #45ada8;
      position: absolute;
      top: 0;
      left: 0;
@@ -2038,7 +2042,7 @@
      padding: 70px 0px;
 }
  .table-main table thead{
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
 }
  .table-main .table thead th{
@@ -2247,9 +2251,15 @@
  .my-account-page a:hover i{
 }
  .service-desc p{
+    border: solid #45ada8;
+     background-color: #9de0ad;
      font-size: 16px;
+     border-top: 0px;
 }
  .service-desc h4{
+     border: solid #45ada8;
+     border-bottom: 0px;
+     background-color: #9de0ad;
      text-decoration: underline;
      font-size: 18px;
      font-weight: 700;
