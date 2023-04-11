@@ -933,7 +933,7 @@
      z-index:8;
 }
  .type-lb .sale{
-     background: #b0b435;
+     background: #45ada8;
      color: #ffffff;
      padding: 2px 10px;
      font-weight: 700;
@@ -960,7 +960,7 @@
      font-family: 'Poppins', sans-serif;
      padding: 4px;
 	 display: inline-block;
-	 background: #b0b435;
+	 background: #45ada8;
 	 color: #ffffff;
      font-weight: 600;
 }
@@ -979,7 +979,7 @@
 	 right: 0;
 }
  .mask-icon ul li{
-     background: #b0b435;
+     background: #45ada8;
 }
  .mask-icon ul li a{
      color: #ffffff;
@@ -987,7 +987,7 @@
      display: block;
 }
  .mask-icon a.cart{
-     background: #b0b435;
+     background: #45ada8;
      position: absolute;
      bottom: 0;
      left: 0px;
@@ -1794,7 +1794,7 @@
      height: 100%;
 }
  .search-product button:hover{
-     background: #b0b435;
+     background: #45ada8;
 }
  .filter-sidebar-left{
      margin-bottom: 20px;
@@ -1857,7 +1857,7 @@
      margin-bottom: 20px;
 }
  #slider-range .ui-slider-handle {
-     background-color: #b0b435;
+     background-color: #45ada8;
      border: 2px solid #fff;
      border-radius: 50%;
      cursor: pointer;
@@ -1868,7 +1868,7 @@
      box-shadow: 0px 0px 6.65px 0.35px rgba(0,0,0,0.15);
 }
  #slider-range .ui-slider-range {
-     background-color: #b0b435;
+     background-color: #45ada8;
      border-radius: 0;
 }
  #slider-range {
@@ -1944,7 +1944,7 @@
      color: #ffffff;
 }
  .toolbar-sorter-right .btn-light:hover{
-     background: #b0b435;
+     background: #45ada8;
      border-radius: 0px;
      border: none;
 }
@@ -1980,7 +1980,7 @@
      padding: 4px 12px;
 }
  .product-item-filter li .nav-link.active {
-     background: #b0b435;
+     background: #45ada8;
      border: none;
      color: #ffffff;
 }
