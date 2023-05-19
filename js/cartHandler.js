@@ -1,0 +1,197 @@
+document.products = [
+  {
+    id: "prd001",
+    image: "images/img-pro-01.jpg",
+    title: "Bravery Chicken Adult alimento para perro",
+    price: 23990,
+  },
+  {
+    id: "prd002",
+    image: "images/img-pro-02.jpg",
+    title: "Bravery Chicken Adult Cat alimento para gato",
+    price: 20990,
+  },
+  {
+    id: "prd003",
+    image: "images/img-pro-03.jpg",
+    title: "Portland scratch board - 42.5 x 24 x 10 cm rascador",
+    price: 8990,
+  },
+  {
+    id: "prd004",
+    image: "images/img-pro-04.jpg",
+    title: "Zeedog FlyArnés - Arnés - Gotham - XL, L, M, S, XS",
+    price: 25990,
+  },
+  {
+    id: "prd005",
+    image: "images/img-pro-05.jpg",
+    title: "Casa Perro Plastica Kenny",
+    price: 79000,
+  },
+  {
+    id: "prd006",
+    image: "images/img-pro-06.jpg",
+    title: "Igloo Casa Para Perro",
+    price: 40990,
+  },
+  {
+    id: "prd007",
+    image: "images/img-pro-07.jpg",
+    title: "Fuente bebedera flower - flor de 3 LT",
+    price: 53990,
+  },
+  {
+    id: "prd008",
+    image: "images/img-pro-08.jpg",
+    title: "Aquatic turtle diet 340GR",
+    price: 13990,
+  },
+  {
+    id: "prd009",
+    image: "images/img-pro-09.jpg",
+    title: "Large bird diet 1.36 KG",
+    price: 26990,
+  },
+];
+
+function getCartFromCookie() {
+  if (document.cookie == "") {
+    document.cart = [];
+    return;
+  }
+
+  for (const cookie of document.cookie.split(";"))
+    if (cookie.split("=")[0] == "_cart")
+      document.cart = JSON.parse(cookie.split("=")[1]);
+
+  if (!document.cart) document.cart = [];
+}
+
+function updateCartCookie() {
+  document.cookie = "_cart=" + JSON.stringify(document.cart);
+}
+
+function addToCart(id, qty) {
+  productInCart = false;
+
+  for (const prd of document.cart) {
+    if (id == prd.id) {
+      productInCart = true;
+      prd.qty += qty;
+    }
+  }
+
+  if (!productInCart) {
+    document.cart.push({
+      id: id,
+      qty: qty,
+    });
+  }
+
+  updateCartCookie();
+  handlePageConstruction();
+}
+
+function removeFromCart(id) {
+  let newCart = [];
+
+  for (const prd of document.cart) if (id != prd.id) newCart.push(prd);
+
+  document.cart = newCart;
+
+  updateCartCookie();
+  handlePageConstruction();
+}
+
+function getProductById(productId) {
+  for (const prd of document.products) {
+    if (prd.id == productId) return prd;
+  }
+}
+
+function buildIndexProducts(productId) {
+  let prd = getProductById(productId);
+
+  document.getElementById("INDEXPRODUCTTAB").innerHTML =
+    document.getElementById("INDEXPRODUCTTAB").innerHTML +
+    '<div class="col-lg-3 col-md-6 special-grid best-seller">' +
+    '    <div class="products-single fix">' +
+    '        <div class="box-img-hover">' +
+    '            <div class="type-lb">' +
+    '                <p class="sale">Sale</p>' +
+    "            </div>" +
+    `            <img src="${prd.image}" class="img-fluid" alt="Image">` +
+    '            <div class="mask-icon">' +
+    "                <ul>" +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Vista Previa"><i' +
+    '                                class="fas fa-eye"></i></a></li>' +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comparar"><i' +
+    '                                class="fas fa-sync-alt"></i></a></li>' +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Añadir a Favoritos"><i' +
+    '                                class="far fa-heart"></i></a></li>' +
+    "                </ul>" +
+    `                <a onClick="addToCart('${productId}', 1)" class="cart">Añadir al carro</a>` +
+    "            </div>" +
+    "        </div>" +
+    '        <div class="why-text">' +
+    `            <h4>${prd.title}</h4>` +
+    `            <h5>$${prd.price}</h5>` +
+    "        </div>" +
+    "    </div>" +
+    "</div>";
+}
+
+function buildCartProducts(productId, qty) {
+  let prd = getProductById(productId);
+
+  document.getElementById("INDEXPRODUCTTAB").innerHTML =
+    document.getElementById("INDEXPRODUCTTAB").innerHTML +
+    "<tr>" +
+    '    <td class="thumbnail-img">' +
+    '        <a href="#">' +
+    `            <img class="img-fluid" src="${prd.image}" alt="" />` +
+    "        </a>" +
+    "    </td>" +
+    '    <td class="name-pr">' +
+    '        <a href="#">' +
+    `            ${prd.title}` +
+    "        </a>" +
+    "    </td>" +
+    '    <td class="price-pr">' +
+    `        <p>$${prd.price}</p>` +
+    "    </td>" +
+    `    <td class="quantity-box"><input type="number" size="4" value="${qty}" min="0" step="1" class="c-input-text qty text">` +
+    "    </td>" +
+    '    <td class="total-pr">' +
+    `        <p>$${prd.price * qty}</p>` +
+    "    </td>" +
+    '    <td class="remove-pr">' +
+    `        <a onClick="removeFromCart('${prd.id}')">` +
+    '            <i class="fas fa-times"></i>' +
+    "        </a>" +
+    "    </td>" +
+    "</tr>";
+}
+
+function handlePageConstruction() {
+  document.getElementById("INDEXPRODUCTTAB").innerHTML = "";
+
+  let pageName = document.getElementById("pagetracker").value;
+
+  if (pageName == "INDEX") {
+    buildIndexProducts("prd001");
+    buildIndexProducts("prd002");
+    buildIndexProducts("prd003");
+    buildIndexProducts("prd004");
+  }
+
+  if (pageName == "CART") {
+    for (const prd of document.cart) {
+      buildCartProducts(prd.id, prd.qty);
+    }
+  }
+}
+
+getCartFromCookie();
+handlePageConstruction();
