@@ -72,6 +72,14 @@ function updateCartCookie() {
   document.cookie = "_cart=" + JSON.stringify(document.cart);
 }
 
+function updateQty(id) {
+  let qty = document.getElementById(`input${id}`).value;
+
+  for (const prd of document.cart) if (prd.id == id) prd.qty = qty;
+
+  handlePageConstruction();
+}
+
 function addToCart(id, qty) {
   productInCart = false;
 
@@ -136,7 +144,7 @@ function buildIndexProducts(productId) {
     "        </div>" +
     '        <div class="why-text">' +
     `            <h4>${prd.title}</h4>` +
-    `            <h5>$${prd.price}</h5>` +
+    `            <h5>${formatPriceStr(prd.price)}</h5>` +
     "        </div>" +
     "    </div>" +
     "</div>";
@@ -159,12 +167,12 @@ function buildCartProducts(productId, qty) {
     "        </a>" +
     "    </td>" +
     '    <td class="price-pr">' +
-    `        <p>$${prd.price}</p>` +
+    `        <p>${formatPriceStr(prd.price)}</p>` +
     "    </td>" +
-    `    <td class="quantity-box"><input type="number" size="4" value="${qty}" min="0" step="1" class="c-input-text qty text">` +
+    `    <td class="quantity-box"><input onChange="updateQty('${prd.id}')" id='input${prd.id}' type="number" size="4" value="${qty}" min="0" step="1" class="c-input-text qty text">` +
     "    </td>" +
     '    <td class="total-pr">' +
-    `        <p>$${prd.price * qty}</p>` +
+    `        <p>${formatPriceStr(prd.price * qty)}</p>` +
     "    </td>" +
     '    <td class="remove-pr">' +
     `        <a onClick="removeFromCart('${prd.id}')">` +
@@ -187,10 +195,48 @@ function handlePageConstruction() {
   }
 
   if (pageName == "CART") {
+    let subtotal = 0;
+    let discount = 0;
+    let shipping = 0;
+    let couponed = 0;
+
     for (const prd of document.cart) {
       buildCartProducts(prd.id, prd.qty);
+      for (const allprd of document.products) {
+        if (allprd.id == prd.id) {
+          subtotal += allprd.price * prd.qty;
+        }
+      }
     }
+
+    shipping = parseInt(0.2 * subtotal);
+    discount = parseInt(0.1 * subtotal);
+
+    document.getElementById("CART_SUBTOTAL").innerText = `${formatPriceStr(
+      subtotal
+    )}`;
+    document.getElementById("DISCOUNT_TAXS").innerText = `${formatPriceStr(
+      discount
+    )}`;
+    document.getElementById("DISCOUNT_COUP").innerText = `${formatPriceStr(
+      couponed
+    )}`;
+    document.getElementById("SHIPPING_TOTL").innerText = `${formatPriceStr(
+      shipping
+    )}`;
+    document.getElementById("TOTAL").innerText = `${formatPriceStr(
+      subtotal - discount - couponed + shipping
+    )}`;
   }
+
+  document.getElementById("CART_LEN").innerText = document.cart.length;
+  if (document.getElementById("CART_LEN").innerText == "0")
+    document.getElementById("CART_LEN").innerText = "";
+}
+
+function formatPriceStr(price) {
+  price = price.toString();
+  return `$ ${price.slice(0, price.length - 3)}.${price.slice(-3)}`;
 }
 
 getCartFromCookie();
