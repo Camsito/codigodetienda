@@ -62,14 +62,14 @@ function getCartFromCookie() {
   }
 
   for (const cookie of document.cookie.split(";"))
-    if (cookie.split("=")[0] == "_cart")
-      document.cart = JSON.parse(cookie.split("=")[1]);
+    if (cookie.split(" ")[0].split('=')[0] == "_cart")
+      document.cart = JSON.parse(cookie.split(" ")[0].split("=")[1]);
 
   if (!document.cart) document.cart = [];
 }
 
 function updateCartCookie() {
-  document.cookie = "_cart=" + JSON.stringify(document.cart);
+  document.cookie = "_cart=" + JSON.stringify(document.cart) + " SameSite=none";
 }
 
 function updateQty(id) {
