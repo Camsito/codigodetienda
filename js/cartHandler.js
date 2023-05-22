@@ -62,14 +62,14 @@ function getCartFromCookie() {
   }
 
   for (const cookie of document.cookie.split(";"))
-    if (cookie.split("=")[0] == "_cart")
-      document.cart = JSON.parse(cookie.split("=")[1]);
+    if (cookie.split(" ")[0].split('=')[0] == "_cart")
+      document.cart = JSON.parse(cookie.split(" ")[0].split("=")[1]);
 
   if (!document.cart) document.cart = [];
 }
 
 function updateCartCookie() {
-  document.cookie = "_cart=" + JSON.stringify(document.cart);
+  document.cookie = "_cart=" + JSON.stringify(document.cart) + " SameSite=none";
 }
 
 function updateQty(id) {
@@ -127,7 +127,37 @@ function buildIndexProducts(productId) {
     '    <div class="products-single fix">' +
     '        <div class="box-img-hover">' +
     '            <div class="type-lb">' +
-    '                <p class="sale">Sale</p>' +
+    "            </div>" +
+    `            <img src="${prd.image}" class="img-fluid" alt="Image">` +
+    '            <div class="mask-icon">' +
+    "                <ul>" +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Vista Previa"><i' +
+    '                                class="fas fa-eye"></i></a></li>' +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comparar"><i' +
+    '                                class="fas fa-sync-alt"></i></a></li>' +
+    '                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Añadir a Favoritos"><i' +
+    '                                class="far fa-heart"></i></a></li>' +
+    "                </ul>" +
+    `                <a onClick="addToCart('${productId}', 1)" class="cart">Añadir al carro</a>` +
+    "            </div>" +
+    "        </div>" +
+    '        <div class="why-text">' +
+    `            <h4>${prd.title}</h4>` +
+    `            <h5>${formatPriceStr(prd.price)}</h5>` +
+    "        </div>" +
+    "    </div>" +
+    "</div>";
+}
+
+function buildShopProducts(productId){
+  let prd = getElementsById(productId);
+
+  document.getElementById("INDEXPRODUCTTAB").innerHTML =
+    document.getElementById("INDEXPRODUCTTAB").innerHTML + 
+    '<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">' +
+    '    <div class="products-single fix">' +
+    '        <div class="box-img-hover">' +
+    '            <div class="type-lb">' +
     "            </div>" +
     `            <img src="${prd.image}" class="img-fluid" alt="Image">` +
     '            <div class="mask-icon">' +
@@ -182,6 +212,9 @@ function buildCartProducts(productId, qty) {
     "</tr>";
 }
 
+
+
+
 function handlePageConstruction() {
   document.getElementById("INDEXPRODUCTTAB").innerHTML = "";
 
@@ -192,6 +225,18 @@ function handlePageConstruction() {
     buildIndexProducts("prd002");
     buildIndexProducts("prd003");
     buildIndexProducts("prd004");
+  }
+  
+  if (pageName == "SHOP"){
+    buildIndexProducts("prd001");
+    buildIndexProducts("prd002");
+    buildIndexProducts("prd003");
+    buildIndexProducts("prd004");
+    buildIndexProducts("prd005");
+    buildIndexProducts("prd006");
+    buildIndexProducts("prd007");
+    buildIndexProducts("prd008");
+    buildIndexProducts("prd009");
   }
 
   if (pageName == "CART") {
@@ -233,6 +278,7 @@ function handlePageConstruction() {
   if (document.getElementById("CART_LEN").innerText == "0")
     document.getElementById("CART_LEN").innerText = "";
 }
+
 
 function formatPriceStr(price) {
   price = price.toString();

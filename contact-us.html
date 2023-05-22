@@ -157,7 +157,7 @@
                     <div class="contact-form-right">
                         <h2>Hablanos cuando quieras</h2>
                         <p>Aqui puedes dejar tu opinion, tus ideas o comentarios para apoyar nuetro proyecto!.</p>
-                        <form id="contactForm">
+                        <form id="contactForm" >
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Email" id="email" class="form-control"
+                                        <input onchange="validarCorreo()" type="text" placeholder="Email" id="email" class="form-control"
                                             name="name" required data-error="El email es obligatorio">
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -189,7 +189,7 @@
                                     </div>
                                     <div class="submit-button text-center">
                                         <button style="background-color: #45ada8;" class="btn hvr-hover" id="submit"
-                                            type="submit">Enviar</button>
+                                            type="submit" >Enviar</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
