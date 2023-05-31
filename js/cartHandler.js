@@ -180,6 +180,10 @@ function buildShopProducts(productId){
     "</div>";
 }
 
+function buildSideCartProducts(productId, qty) {
+  let prd = getProductById(productId);
+}
+
 function buildCartProducts(productId, qty) {
   let prd = getProductById(productId);
 
@@ -212,6 +216,18 @@ function buildCartProducts(productId, qty) {
     "</tr>";
 }
 
+function buildSideCartProducts(productId, qty){
+  let prd = getProductById(productId);
+
+  document.getElementById("INDEXPRODUCTTAB").innerHTML =
+    document.getElementById("INDEXPRODUCTTAB") +
+
+    "<li>"
+      `<a href="#" class="photo"><img src="${prd.image}" class="cart-thumb" alt="" /></a>`
+      `<h6><a href="#">${prd.title} </a></h6>`
+      `<p>1x - <span class="price">${prd.price}</span></p>`
+    "</li>"
+}
 
 
 
@@ -237,6 +253,19 @@ function handlePageConstruction() {
     buildIndexProducts("prd007");
     buildIndexProducts("prd008");
     buildIndexProducts("prd009");
+  }
+
+  if (pageName == "SIDECART"){
+    let total = 0;
+
+    for (const prd of document.cart){
+      buildSideCartProducts(prd.id, prd.qty)
+      for (const allprd of document.products) {
+        if (allprd.id == prd.id) {
+          total += allprd.price * prd.qty;
+        }
+      }
+    }
   }
 
   if (pageName == "CART") {
