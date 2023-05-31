@@ -1,0 +1,17 @@
+{
+    "idleHeartbeats": 143,
+    "navigatingHeartbeats": 130,
+    "totalCodingHeartbeats": 328,
+    "languageHeartbeats": {
+        "jsonc": 46,
+        "json": 118,
+        "javascript": 99,
+        "log": 65
+    },
+    "fileHeartbeats": {
+        "/Users/neto/Library/Application Support/Code/User/settings.json": 46,
+        "package.json": 118,
+        "src/main.js": 99,
+        "vscode.git.Git": 65
+    }
+}
